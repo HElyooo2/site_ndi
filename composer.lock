@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cabeee3fcea467e882c7180ad37909ac",
+    "content-hash": "80b156cab988d7e43072b5843ad19480",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1692,6 +1692,65 @@
                 }
             ],
             "time": "2022-07-24T12:00:55+00:00"
+        },
+        {
+            "name": "orhanerday/open-ai",
+            "version": "3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orhanerday/open-ai.git",
+                "reference": "56c80d7ebd55d08f0dba9faaa71eac871605d9d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orhanerday/open-ai/zipball/56c80d7ebd55d08f0dba9faaa71eac871605d9d1",
+                "reference": "56c80d7ebd55d08f0dba9faaa71eac871605d9d1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "pestphp/pest": "^1.20",
+                "spatie/ray": "^1.28"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Orhanerday\\OpenAi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Orhan Erday",
+                    "email": "orhanerday@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OpenAI GPT-3 Api Client in PHP",
+            "homepage": "https://github.com/orhanerday/open-ai",
+            "keywords": [
+                "open-ai",
+                "orhanerday"
+            ],
+            "support": {
+                "issues": "https://github.com/orhanerday/open-ai/issues",
+                "source": "https://github.com/orhanerday/open-ai/tree/3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/orhanerday",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-11-18T15:28:22+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
