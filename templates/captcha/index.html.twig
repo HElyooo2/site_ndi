@@ -12,10 +12,26 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     This friendly message is coming from:
+    {{dump(images)}}
     <ul>
         {% for step in steps %}<li>Step : {{step}}</li>{% endfor %}
-        <li>Your controller at <code><a href="{{ '/home/helio/Documents/dev/web/symfony/site_ndi/src/Controller/CaptchaController.php'|file_link(0) }}">src/Controller/CaptchaController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/helio/Documents/dev/web/symfony/site_ndi/templates/captcha/index.html.twig'|file_link(0) }}">templates/captcha/index.html.twig</a></code></li>
+
     </ul>
+    <div id="parent">
+    {% for img in images %}<img id="{{ img[1] }}" src = "{{img[0]}}" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"> {% endfor %}
+    {# <div id="box4" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">Note 1</div> #}
+    </div>
+
+    {# <h5>TTTTTTTTTTTTTTT</h5>
+    <div id="parent">
+    <div id="box1" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">Note 1</div>
+    <div id="box2" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">Note 2</div>
+                            <div id="box3" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="box3" src = "https://media.discordapp.net/attachments/795733258577903637/1047878019424976967/unknown.png?width=313&height=660" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div> #}
+
+
+
+
+
 </div>
 {% endblock %}

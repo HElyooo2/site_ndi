@@ -7,10 +7,87 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <style>
+                #box1{
+            background-color:red;
+                }
+
+                #box2
+                {
+            background-color: blue;
+
+                }
+                #box3
+                {
+            background-color:green;
+
+                }
+
+                #box4
+                {
+            background-color:yellow;
+
+                }
+
+            .common
+                {
+            width:256px;
+            height:256px;
+            border-color:green;
+            border-style:solid;
+            border-width: 1px;
+                }
+
+            #parent >div
+                {
+            float:left;
+            clear:none;
+            margin-left:10px;
+                }
+    </style>
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+        <script>
+        let dragindex=0;
+let dropindex=0;
+let clone="";
+
+function drag(e)
+{
+e.dataTransfer.setData("text",e.target.id);
+}
+
+function drop(e)
+{
+e.preventDefault();
+clone=e.target.cloneNode(true);
+let data=e.dataTransfer.getData("text"); 
+if(clone.id !== data) {
+let nodelist=document.getElementById("parent").childNodes;
+for(let i=0;i<nodelist.length;i++)
+{
+if(nodelist[i].id==data)
+{
+dragindex=i;
+}
+
+}
+
+document.getElementById("parent").replaceChild(document.getElementById(data),e.target);
+
+document.getElementById("parent").insertBefore(clone,document.getElementById("parent").childNodes[dragindex]);
+  }
+
+}
+
+function allowDrop(e)
+{
+    e.preventDefault();
+}
+        </script>           
+ 
         {% endblock %}
     </head>
     <body>
