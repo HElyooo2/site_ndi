@@ -34,9 +34,9 @@ class CaptchaController extends AbstractController
 
         $complete = $open_ai->complete([
             'engine' => 'text-davinci-003',
-            'prompt' => 'The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: Write me a simple story in 3 steps.',
+            'prompt' => 'The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: Write the storyboard of a simple story in 3 steps.',
             'temperature' => 0.9,
-            'max_tokens' => 3000,
+            'max_tokens' => 800,
             'frequency_penalty' => 0,
             'presence_penalty' => 0.6,
         ]);
@@ -58,7 +58,7 @@ class CaptchaController extends AbstractController
         foreach ($stepsString as $cle => $string ){
             $cpt += 1;
             $completeImage = $open_ai->image([
-                "prompt" => $string,
+                "prompt" => $string. "int the style of a cartoon",
                 "n" => 1,
                 "size" => "256x256",
                 "response_format" => "url",

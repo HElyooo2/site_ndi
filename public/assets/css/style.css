@@ -1,0 +1,308 @@
+footer {
+    display: block
+}
+
+body {
+    line-height: 1
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+html {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif
+}
+
+body {
+    background-color: #6d7d8d;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.panel {
+    background-color: #d95233;
+    border-radius: 10px;
+    height: %
+}
+
+@media (min-width:900px) {
+    .panel {
+        flex-direction: row
+    }
+}
+
+p {
+    font-size: 16px;
+    color: #fff
+}
+
+.wrap {
+    color: #222;
+    font-size: 24px
+}
+
+.clip-svg {
+    width: 0;
+    height: 0
+}
+
+.clip-caption {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center
+}
+
+.clip-each {
+    display: block;
+    position: relative;
+    clip-path: url(#hexagon-clip);
+    margin: -18px
+}
+
+a.clip-each:hover {
+    background: #9e566e;
+    -webkit-transition: all .25s ease-in;
+    transition: all .25s ease-in
+}
+
+.clip-solid {
+    width: 400px;
+    height: 400px;
+    background-image: url(http://karenmenezes.com/shapes-polygon/clip-demo-img.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff
+}
+
+.clip-solid:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-clip-path: polygon(100% 3%, 17% 100%, 100% 100%);
+    clip-path: polygon(100% 3%, 17% 100%, 100% 100%);
+    -webkit-clip-path: url(#triangle-clip);
+    clip-path: url(#triangle-clip);
+    background: #9e566e;
+    z-index: 1;
+    width: 100%;
+    height: 155px;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    pointer-events: none
+}
+
+.clip-solid:hover:after {
+    height: 0;
+    -webkit-transition: all .45s ease-in;
+    transition: all .45s ease-in
+}
+
+.clip-border {
+    width: 190px;
+    height: 190px;
+    margin-top: 7px;
+    color: #222;
+    background-color: #fff
+}
+
+.clip-border-transparent {
+    width: 190px;
+    height: 190px;
+    margin-top: 7px;
+    background-color: #fff
+}
+
+.clip-border::after {
+    content: "";
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    right: 4%;
+    bottom: 4%;
+    margin: 0 auto;
+    background: url(http://karenmenezes.com/shapes-polygon/bg-cubes.png);
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+    -webkit-clip-path: url(#hexagon-clip);
+    clip-path: url(#hexagon-clip);
+    z-index: -1
+}
+
+@media only screen and (min-width:550px) {
+    .wrap-account {
+        display: table;
+        -ms-transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateY(+50%) translateX(+50%)
+    }
+
+    .wrap-quiz {
+        display: table;
+        -ms-transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateY(+15%) translateX(+30%)
+    }
+
+    .wrap-logo {
+        display: table;
+        -ms-transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateY(+3%) translateX(+40%)
+    }
+
+    .wrap {
+        display: table;
+        -ms-transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateY(-4%) translateX(+21%)
+    }
+
+    .clip-block {
+        display: table-cell;
+        vertical-align: middle
+    }
+
+    .clip-border {
+        margin-top: 11px
+    }
+}
+
+.clip-border-transparent {
+    width: 190px;
+    height: 190px;
+    margin-top: 7px;
+    color: #222;
+    background-color: #fff0
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+    width: 100%
+}
+
+.wrapper>div {
+    margin: 5px;
+    font-size: 24px
+}
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-template-rows: -5px
+}
+
+.quiz {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 4
+}
+
+.text {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 4;
+    grid-row-end: 4
+}
+
+div.job-wide-all {
+    display: -webkit-flex
+}
+
+h3 {
+    color: #fff
+}
+
+.jobs.wide {
+    margin-top: 169px;
+    margin-left: -60px;
+    margin-right: 50px
+}
+
+.logo-caption {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 190px;
+    color: #f50000;
+    font-family: Calibri
+}
+
+.sous-logo-caption {
+    width: 100%;
+    position: absolute;
+    top: 78%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    color: #000;
+    font-family: Calibri
+}
+
+a.clip-each.clip-border {
+    color: #6d7d8d
+}
+
+.sous-logo-caption {
+    color: #6d7d8d
+}
+
+span.hakuna-matata {
+    font-size: 16px;
+    color: #fff;
+    /* align-items: center; */
+}
+
+
+.footer {
+    text-align: center;
+}
+
+
+#box1{
+    background-color:red;
+    }
+    
+    #box2
+    {
+    background-color: blue;
+    
+    }
+    #box3
+    {
+    background-color:green;
+    
+    }
+    
+    #box4
+    {
+    background-color:yellow;
+    
+    }
+    
+    .common
+    {
+    width:256px;
+    height:256px;
+    border-color:green;
+    border-style:solid;
+    border-width: 1px;
+    }
+    
+    #parent >div
+    {
+    float:left;
+    clear:none;
+    margin-left:10px;
+    }
