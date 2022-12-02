@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Orhanerday\OpenAi\OpenAi;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 
 class CaptchaController extends AbstractController
 {
@@ -29,12 +30,12 @@ class CaptchaController extends AbstractController
             return substr($string, $ini, $len);
         }
 
-        $open_ai_key = "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";
+        $open_ai_key = "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";
         $open_ai = new OpenAi($open_ai_key);
 
         $complete = $open_ai->complete([
             'engine' => 'text-davinci-003',
-            'prompt' => 'The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: Write the storyboard of a simple story in 3 steps.',
+            'prompt' => 'The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: Write me a story for kids in 3 steps that could be easily be describes with drawings.',
             'temperature' => 0.9,
             'max_tokens' => 800,
             'frequency_penalty' => 0,
@@ -63,10 +64,20 @@ class CaptchaController extends AbstractController
                 "size" => "256x256",
                 "response_format" => "url",
              ]);
-             var_dump($completeImage);
+             //var_dump($completeImage);
              array_push($stepUrlImages, array(get_string_between($completeImage, '"url": "', '"'), "box".strval($cpt) ));
         }
+        shuffle($stepUrlImages);
         $temp = $stepUrlImages;
+
+
+
+
+        // $view['form']->widget($form['save'], ['label' => 'Click me']);
+
+        // $builder->add('save', ButtonType::class, [
+        //     'attr' => ['class' => 'save'],
+        // ]);
 
         //var_dump($stepUrlImages);
         return $this->render('captcha/index.html.twig', [
@@ -76,4 +87,6 @@ class CaptchaController extends AbstractController
             'controller_name' => 'CaptchaController',
         ]);
     }
+
+    
 }

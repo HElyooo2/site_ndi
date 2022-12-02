@@ -1,4 +1,4 @@
-<script>
+
 let dragindex=0;
 let dropindex=0;
 let clone="";
@@ -35,4 +35,5 @@ function allowDrop(e)
 {
 e.preventDefault();
 }
-</script>  
+
+

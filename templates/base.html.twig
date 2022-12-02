@@ -6,89 +6,6 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-            <style>
-                #box1{
-            background-color:red;
-                }
-
-                #box2
-                {
-            background-color: blue;
-
-                }
-                #box3
-                {
-            background-color:green;
-
-                }
-
-                #box4
-                {
-            background-color:yellow;
-
-                }
-
-            .common
-                {
-            width:256px;
-            height:256px;
-            border-color:green;
-            border-style:solid;
-            border-width: 1px;
-                }
-
-            #parent >div
-                {
-            float:left;
-            clear:none;
-            margin-left:10px;
-                }
-    </style>
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        <script>
-        let dragindex=0;
-let dropindex=0;
-let clone="";
-
-function drag(e)
-{
-e.dataTransfer.setData("text",e.target.id);
-}
-
-function drop(e)
-{
-e.preventDefault();
-clone=e.target.cloneNode(true);
-let data=e.dataTransfer.getData("text"); 
-if(clone.id !== data) {
-let nodelist=document.getElementById("parent").childNodes;
-for(let i=0;i<nodelist.length;i++)
-{
-if(nodelist[i].id==data)
-{
-dragindex=i;
-}
-
-}
-
-document.getElementById("parent").replaceChild(document.getElementById(data),e.target);
-
-document.getElementById("parent").insertBefore(clone,document.getElementById("parent").childNodes[dragindex]);
-  }
-
-}
-
-function allowDrop(e)
-{
-    e.preventDefault();
-}
-        </script>           
- 
-        {% endblock %}
             <link rel="stylesheet" href="assets/css/style.css">
             <script defer src="https://pro.fontawesome.com/releases/v5.8.1/js/all.js"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
@@ -99,7 +16,8 @@ function allowDrop(e)
         {% block body %}{% endblock %}
     </body>
     {% block scriptsheets %}
-        <link rel="stylesheet" href="assets/js/script.js">
+        {# <link rel="script" href="assets/js/script.js"> #}
+        <script src="assets/js/script.js" type="text/javascript"></script>
 
     {% endblock %}
 </html>

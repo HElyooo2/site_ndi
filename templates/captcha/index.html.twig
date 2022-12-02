@@ -21,17 +21,31 @@
     {% for img in images %}<img id="{{ img[1] }}" src = "{{img[0]}}" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"> {% endfor %}
     {# <div id="box4" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">Note 1</div> #}
     </div>
+    <script>
+    function captcha()
 
-    {# <h5>TTTTTTTTTTTTTTT</h5>
-    <div id="parent">
-    <div id="box1" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">Note 1</div>
-    <div id="box2" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">Note 2</div>
-                            <div id="box3" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="box3" src = "https://media.discordapp.net/attachments/795733258577903637/1047878019424976967/unknown.png?width=313&height=660" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    </div> #}
+    {
+        var ancestor = document.getElementById('parent'),
+        descendents = ancestor.getElementsByTagName('*');
+         // gets all descendent of ancestor
+        var i, e, d;
+        for (i = 0; i < descendents.length; ++i) {
+            e = descendents[i];
+            d += e.id;
+        } 
 
-
-
-
+        if(d == "undefinedbox1box2box3"){
+            window.location.href = "/";
+        }
+        else{
+            window.location.reload();
+        }
+        //
+    }
+    </script>
+    <button onclick="captcha()">Click me</button> 
+    
+   
 
 </div>
 {% endblock %}
