@@ -6,7 +6,7 @@
 
 
 
-    <div class="panel pricing-table">
+    <div class="panel">
 
 
         <div class="wrapper">
@@ -128,16 +128,33 @@
                     </div>
                     <div class="clip-block">
 
-                        <a href="#" class="clip-each clip-border">
+                        {% if app.user %}
+                            <a href="{{ path("app_logout") }}" class="clip-each clip-border">
 
-                            <div class="clip-caption">
-                                <i class="fas fa-user fa-fw fa-1x"></i>
-                            </div>
-                            <div class="sous-logo-caption">Compte</div>
+                                <div class="clip-caption">
+                                    <i class="fas fa-user fa-fw fa-1x"></i>
+                                </div>
+{#                                <div class="sous-logo-caption">{{ app.user.username }}</div>#}
+                                <div class="sous-logo-caption">{{ app.user.username }} <br>Deconecter?</div>
+
+                            </a>
+                        {% else %}
+                            <a href="{{ path("app_login") }}" class="clip-each clip-border">
+
+                                <div class="clip-caption">
+                                    <i class="fas fa-user fa-fw fa-1x"></i>
+                                </div>
+                                <div class="sous-logo-caption">Compte</div>
+
+                            </a>
+
+                        {% endif %}
+
+
+                        <a href="{{ path("app_hakuna_matata") }}" class="clip-each clip-border-transparent">
+
                         </a>
-                        <a href="#" class="clip-each clip-border-transparent">
-
-                        </a></div>
+                    </div>
 
                     <!-- /clip-block -->
                     <svg class="clip-svg">
@@ -194,7 +211,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="footer">footer</div>
+            <div class="footer"><div><span class="hakuna-matata">Développé par GAUDE Helio et ANCHIDIN Valentin</span></div></div>
         </div>
 
 
