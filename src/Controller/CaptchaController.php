@@ -30,7 +30,7 @@ class CaptchaController extends AbstractController
             return substr($string, $ini, $len);
         }
 
-        $open_ai_key = "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";
+        $open_ai_key = "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";
         $open_ai = new OpenAi($open_ai_key);
 
         $complete = $open_ai->complete([
@@ -88,5 +88,5 @@ class CaptchaController extends AbstractController
         ]);
     }
 
-    
+
 }

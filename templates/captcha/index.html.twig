@@ -9,14 +9,15 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
+    <h1> Remettez cette hstoire en ordre ! </h1>
+    <h3 Captcha, si rien ne s'affiche, soit j'ai dépassé mon crédit sur openAI soit ma clé n'est plus valide.\n Pour voir la solution, inspectez la source et regardez l'ordre des box1,2,3</h1>
+{# 
     This friendly message is coming from:
-    {# {{dump(images)}} #}
+
     <ul>
         {% for step in steps %}<li>Step : {{step}}</li>{% endfor %}
 
-    </ul>
+    </ul> #}
     <div id="parent">
     {% for img in images %}<img id="{{ img[1] }}" src = "{{img[0]}}" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"> {% endfor %}
     {# <div id="box4" class="common" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">Note 1</div> #}
@@ -43,7 +44,7 @@
         //
     }
     </script>
-    <button onclick="captcha()">Click me</button> 
+    <button onclick="captcha()">Valider Captcha</button> 
     
    
 
